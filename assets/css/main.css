@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@import './global.css';
+@import './animation.css';
+
+@theme {
+    --font-sans: "Roboto", sans-serif;
+}

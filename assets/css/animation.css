@@ -1,0 +1,165 @@
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+/* slide-left */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.slide-left-enter-from,
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.slide-left-enter-to,
+.slide-left-leave-from {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+/* slide-right */
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition:
+    opacity 0.3s linear,
+    transform 0.3s linear;
+}
+
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.slide-right-enter-to,
+.slide-right-leave-from {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.slide-down-move,
+.slide-down-enter-active,
+.slide-down-leave-active,
+.slide-fade-bottom-move,
+.slide-fade-bottom-enter-active,
+.slide-fade-bottom-leave-active {
+  transition: all 0.3s ease;
+}
+
+.collapse-enter-to,
+.collapse-enter-from,
+.collapse-leave-to {
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(10deg);
+  }
+}
+
+.scale-up-down {
+  animation: scaleUpDown 3s ease-in-out infinite;
+}
+
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(10deg);
+  }
+}
+
+.scale-up-down {
+  animation: scaleUpDown 3s ease-in-out infinite;
+}
+
+@keyframes zoomInfinite {
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.zoom-infinite {
+  animation: zoomInfinite 6s ease-in-out infinite;
+  transform-style: preserve-3d; /* Сохраняет 3D-эффект */
+}
+
+.flash-animation {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 20px;
+    padding: 30px 0;
+    background: #d9d9d9;
+    filter: blur(40px);
+    transform: rotate(45deg);
+    animation: 2s infinite flash-animation;
+  }
+}
+@keyframes flash-animation {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 150%;
+  }
+}
+
+.blink-icon {
+  animation: 800ms infinite fade-icon;
+}
+@keyframes fade-icon {
+  0% {
+    opacity: 0.5;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
